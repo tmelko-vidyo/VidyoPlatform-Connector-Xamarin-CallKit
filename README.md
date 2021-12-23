@@ -1,7 +1,7 @@
-# VidyoPlatform Connector Xamarin
+# VidyoPlatform Connector Xamarin with iOS Callkit
 
 ## Clone Repository
-git clone https://github.com/Vidyo/vidyoplatform-connector-xamarin.git
+git clone https://github.com/tmelko-vidyo/VidyoPlatform-Connector-Xamarin-CallKit.git
 
 ## Overview
 VidyoConnector-xamarin is a Xamarin Forms cross platform application which contains three projects:
@@ -13,9 +13,9 @@ VidyoConnector-xamarin is a Xamarin Forms cross platform application which conta
 > Note: Highlighted steps are very important because samples already contain configurations specified below and both SDK packages are linked as relative folders located in VidyoConnector-xamarin directory.
 
 1. Download the 21.5.0.13 VidyoPlatform iOS SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-iOSSDK.zip
-2. **Move the unzipped VidyoClient-iOSSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
+2. **Move the unzipped VidyoClient-iOSSDK folder to the /VidyoPlatform-Connector-Xamarin-CallKit/ directory.**
 3. Download the 21.5.0.13 VidyoPlatform Android SDK package: https://static.vidyo.io/21.5.0.13/package/VidyoClient-AndroidSDK.zip
-4. **Move the unzipped VidyoClient-AndroidSDK folder to the /vidyoplatform-connector-xamarin/ directory.**
+4. **Move the unzipped VidyoClient-AndroidSDK folder to the /VidyoPlatform-Connector-Xamarin-CallKit/ directory.**
 
 > Note: VidyoClient SDK version 19.2.0.8 or later is required. Up to **21.5.0.13** is supported.
 
