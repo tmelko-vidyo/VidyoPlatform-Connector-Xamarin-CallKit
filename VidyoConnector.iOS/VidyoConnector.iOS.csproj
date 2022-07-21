@@ -68,7 +68,7 @@
     <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>Apple Development: heliocraticxinfinity@gmail.com (KDV35873RF)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
     <MtouchFastDev>true</MtouchFastDev>
@@ -87,6 +87,7 @@
       </CustomCommands>
     </CustomCommands>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>Automatic</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -157,6 +158,8 @@
     <Compile Include="Main.cs" />
     <Compile Include="Renderers\NativeViewRenderer.cs" />
     <None Include="packages.config" />
+    <Compile Include="Call\CallManager.cs" />
+    <Compile Include="Call\ProviderDelegate.cs" />
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\LogStats.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\LogStats.cs</Link>
     </Compile>
@@ -349,6 +352,9 @@
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\RemoteMicrophone.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\RemoteMicrophone.cs</Link>
     </Compile>
+    <Compile Include="..\VidyoClient-iOSSDK\include\csharp\CameraPreset.cs">
+      <Link>VidyoClient-iOSSDK\include\csharp\CameraPreset.cs</Link>
+    </Compile>
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\CalendarCreateCode.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\CalendarCreateCode.cs</Link>
     </Compile>
@@ -451,9 +457,1174 @@
     <Compile Include="..\VidyoClient-iOSSDK\include\csharp\ChatMessage.cs">
       <Link>VidyoClient-iOSSDK\include\csharp\ChatMessage.cs</Link>
     </Compile>
-    <Compile Include="Call\CallManager.cs" />
-    <Compile Include="Call\ProviderDelegate.cs" />
-    <Compile Include="Call\CallController.cs" />
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilities_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilities_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShare_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShare_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendar_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendar_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnPropsInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnPropsInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualLoopbackInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualLoopbackInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplication_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplication_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeakerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeakerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophone_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophone_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkService.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkService.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoStatistics_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoStatistics_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendeeInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendeeInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipant.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipant.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpointInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpointInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterfaceInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterfaceInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRendererInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRendererInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCallInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCallInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManager_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManager_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCamera.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCamera.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoCapability_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoCapability_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpoint.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpoint.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShare.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShare.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarLibraryDefs.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarLibraryDefs.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLicense.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLicense.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeeting.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeeting.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDevice.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDevice.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeakerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeakerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRenderer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRenderer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLatencyTestInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLatencyTestInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomPropertiesInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomPropertiesInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfo_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfo_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRendererInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRendererInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLatencyTest.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLatencyTest.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfoInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfoInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophoneInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophoneInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoTransportInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoTransportInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCameraInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCameraInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkServiceInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkServiceInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormField.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormField.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeaker_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeaker_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomProperties_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomProperties_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManager.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManager.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfoInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfoInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendar.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendar.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitor_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitor_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCamera_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteCamera_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterface.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterface.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnProps.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnProps.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrame.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrame.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManagerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManagerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoProperty_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoProperty_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGateway.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGateway.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraEffectInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraEffectInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnectorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnectorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSource_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSource_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormField_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormField_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeaker.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeaker.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplication.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplication.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShare.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShare.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoReconnectInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoReconnectInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLoggerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLoggerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGatewayInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGatewayInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManager_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManager_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfo.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfo.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormFieldInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFormFieldInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManager_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManager_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSource_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSource_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendee.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendee.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRenderer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRenderer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUser.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUser.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophone.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMicrophone.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessage.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessage.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDevice_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDevice_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeeting_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeeting_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShareInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShareInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUtils.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUtils.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomProperties.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomProperties.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSource.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSource.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipantInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipantInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShare_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShare_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCameraInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCameraInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCompress.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCompress.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingProperties.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingProperties.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventScheduleInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventScheduleInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeaker_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteSpeaker_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilities.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilities.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecord_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecord_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShare_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteWindowShare_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrame.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrame.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUserInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoUserInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRenderer_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalRenderer_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoTransport.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoTransport.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioCapability.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioCapability.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophone_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophone_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManagerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManagerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoIcon.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoIcon.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkService_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkService_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessage_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessage_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnector.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnector.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnProps_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarConnProps_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShare.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShare.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCodecInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCodecInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecord.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecord.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplicationInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoApplicationInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfo.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfo.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConstraintsInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConstraintsInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrame_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrame_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRenderer_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteRenderer_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGateway_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoGateway_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCall.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCall.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnector_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoConnector_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManagerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualDeviceManagerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShareInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualWindowShareInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCamera_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCamera_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManager.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCalendarManager.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfoInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInfoInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSourceInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualAudioSourceInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventSchedule.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventSchedule.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoForwardDecl.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoForwardDecl.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoStatistics.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoStatistics.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShareInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalWindowShareInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophoneInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophoneInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrame_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrame_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMediaFormats.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMediaFormats.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMediaFormats_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMediaFormats_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrameInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoAudioFrameInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilitiesInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCameraControlCapabilitiesInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManager.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualShareManager.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventSchedule_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEventSchedule_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceUtils.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceUtils.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogger.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogger.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterface_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoNetworkInterface_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitor.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalMonitor.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecordInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogRecordInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContact_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContact_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendee_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingAttendee_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFrameNormalizationInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoFrameNormalizationInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogger_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLogger_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSourceInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSourceInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoMeetingInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoClientElectron.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoClientElectron.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfo.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfo.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCamera.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalCamera.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceUtilsInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoDeviceUtilsInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrameInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoFrameInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoProperty.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoProperty.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfo_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoomInfo_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContact.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContact.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfo_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoContactInfo_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeaker.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoLocalSpeaker.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipant_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoParticipant_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSource.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVirtualVideoSource.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophone.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRemoteMicrophone.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpoint_Objc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoEndpoint_Objc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessageInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoChatMessageInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\CalendarPlugin.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\CalendarPlugin.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoCapability.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoVideoCapability.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCodec.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoCodec.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoom.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\VidyoClient\VidyoRoom.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiSourceType.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiSourceType.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiList.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiList.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLayoutMaker.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLayoutMaker.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnorderedStringVoidPtrMap.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnorderedStringVoidPtrMap.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiVector.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiVector.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringUtilsInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringUtilsInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAllocatorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAllocatorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrc32Inline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrc32Inline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerVector.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerVector.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiWildcardExpression.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiWildcardExpression.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAssociativeContainers.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAssociativeContainers.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitsetInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitsetInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCompiler.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCompiler.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringSet.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringSet.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtility.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtility.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUri.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUri.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicodeBidi.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicodeBidi.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiTypesInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiTypesInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPseudoRandom.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPseudoRandom.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCommandLineOption.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCommandLineOption.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCast.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCast.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiGraph.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiGraph.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiString.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiString.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAllocator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAllocator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\VidyoConstruct.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\VidyoConstruct.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointInPolygon.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointInPolygon.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAssert.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAssert.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMediaFormat.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMediaFormat.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringList.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringList.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRegex.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRegex.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearProgramming.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearProgramming.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringVector.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringVector.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitstream.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitstream.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearProgrammingInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearProgrammingInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiHeap.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiHeap.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPropertyInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPropertyInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBasicTypesContainer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBasicTypesContainer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrashHandler.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrashHandler.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringStack.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringStack.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStackTrace.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStackTrace.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStdCLibInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStdCLibInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMap.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMap.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCommandLineOptionInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCommandLineOptionInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRestrictedBitsetInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRestrictedBitsetInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtils.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtils.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRectangleInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRectangleInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMediaType.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMediaType.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearMotion.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLinearMotion.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRandomVarsInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRandomVarsInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerList.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerList.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiTypes.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiTypes.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMotionProfile.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMotionProfile.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUriInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUriInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicode.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicode.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiOptional.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiOptional.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiIterators.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiIterators.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRectangle.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRectangle.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiResolutionInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiResolutionInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicodePrecis.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnicodePrecis.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiObjects.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiObjects.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBase64Encoding.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBase64Encoding.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiVersionInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiVersionInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiSet.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiSet.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMiscInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMiscInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlgorithm.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlgorithm.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnorderedStringStringMap.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnorderedStringStringMap.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiWideString.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiWideString.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBase64EncodingInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBase64EncodingInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiContainers.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiContainers.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiResolution.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiResolution.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrc32.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiCrc32.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMatrix.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMatrix.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiSimpleLexer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiSimpleLexer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringStringMap.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringStringMap.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStdCLib.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStdCLib.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiProperty.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiProperty.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitset.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitset.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRandomVars.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRandomVars.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitstreamInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBitstreamInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiNames.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiNames.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBool.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBool.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMisc.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMisc.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLocation.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLocation.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiLocationInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiLocationInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiGraphInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiGraphInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiBinaryTree.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiBinaryTree.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerDeque.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiPointerDeque.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiMotionProfileInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiMotionProfileInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiVersion.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiVersion.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtf8Encoding.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUtf8Encoding.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnordered.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiUnordered.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiWideStringInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiWideStringInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiConcepts.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiConcepts.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringUtils.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStringUtils.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlignedAllocatorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlignedAllocatorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlignedAllocator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiAlignedAllocator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiRestrictedBitset.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiRestrictedBitset.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiTemplate.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiTemplate.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiStack.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiStack.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\LmiDeque.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\LmiDeque.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC9.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC9.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC11.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC11.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC7.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC7.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeARM64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeARM64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigOS10XcodeARM64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigOS10XcodeARM64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigOS10XcodeARM.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigOS10XcodeARM.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC12.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC12.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiAttributeDefs.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiAttributeDefs.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC15X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC15X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC10X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC10X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidI386.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidI386.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC15.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC15.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC11X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC11X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC14X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC14X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiOptFns.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiOptFns.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeI386.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeI386.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWindowsPhone81MsVisualC12X86.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWindowsPhone81MsVisualC12X86.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC9X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC9X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidArm64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidArm64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC14.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWin7MsVisualC14.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC12X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC12X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigMacOS10Xcode.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigMacOS10Xcode.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidArmV7.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidArmV7.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiFunctionName.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiFunctionName.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC8X64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC8X64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWindowsPhone81MsVisualC12ARM.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWindowsPhone81MsVisualC12ARM.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC10.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC10.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC8.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigWinXPMsVisualC8.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeX86_64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeX86_64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidX86_64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigAndroidX86_64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeARM.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigIPhoneOSXcodeARM.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigMacOS10XcodeX86_64.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiConfigMacOS10XcodeX86_64.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiBaseTypes.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiBaseTypes.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiBaseCompiler.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Utils\SysDep\LmiBaseCompiler.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiUpdatableLabel.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiUpdatableLabel.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMutexInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMutexInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiTimerLoop.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiTimerLoop.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAndroid.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAndroid.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBuffer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBuffer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiReferenceCountedObjectInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiReferenceCountedObjectInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCom.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCom.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiWatchdog.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiWatchdog.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiInterruptableSleeper.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiInterruptableSleeper.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCallerGuard.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCallerGuard.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiRandom.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiRandom.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiLogInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiLogInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMacFunction.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMacFunction.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition2Inline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition2Inline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiDirectory.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiDirectory.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiProcess.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiProcess.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiThread.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiThread.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAtomicIntegerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAtomicIntegerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiReferenceCountedObject.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiReferenceCountedObject.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiThreadPool.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiThreadPool.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiConditionInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiConditionInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCachedLogListenerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCachedLogListenerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMemory.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMemory.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMallocAllocator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMallocAllocator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAsyncInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAsyncInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMonitor.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMonitor.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBufferInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBufferInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCachedLogListener.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCachedLogListener.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiTimeInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiTimeInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiDirectoryEntry.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiDirectoryEntry.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiStandardErrorLogListener.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiStandardErrorLogListener.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMonitorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMonitorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiRwLock.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiRwLock.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMain.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMain.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiTime.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiTime.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiUpdatableLabelInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiUpdatableLabelInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAtomicInteger.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAtomicInteger.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiWindowIdInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiWindowIdInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiProperties.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiProperties.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiProcessor.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiProcessor.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiMutex.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiMutex.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiSleepInhibitor.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiSleepInhibitor.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiQueue.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiQueue.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiWindowId.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiWindowId.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiSemaphore.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiSemaphore.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiPoolAllocator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiPoolAllocator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiPath.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiPath.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiConsoleLogListener.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiConsoleLogListener.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBufferVector.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiDataBufferVector.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAuthenticator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAuthenticator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCallbackGuard.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCallbackGuard.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiTimer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiTimer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiFile.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiFile.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiSemaphoreInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiSemaphoreInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiAsync.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiAsync.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition2.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiCondition2.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiLocale.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiLocale.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiBattery.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiBattery.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiOs.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiOs.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiSharedPtr.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiSharedPtr.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiFileLogListener.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiFileLogListener.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiSharedPtrInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiSharedPtrInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiLog.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiLog.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Os\LmiProcessorInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Os\LmiProcessorInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfigAutoInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfigAutoInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonTypes.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonTypes.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfigAuto.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfigAuto.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiPlanarAllocator.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiPlanarAllocator.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoFrame.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoFrame.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiCameraControl.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiCameraControl.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiCameraControlInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiCameraControlInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfig.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonConfig.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiDistortion.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiDistortion.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVga2Usb.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVga2Usb.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoBuffer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoBuffer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommon.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommon.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoFrameInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoFrameInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoStabilizer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoStabilizer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiBLC.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiBLC.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoHash.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoHash.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonDefaultSettings.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiVideoCommonDefaultSettings.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiDeinterlacer.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Video\Common\LmiDeinterlacer.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaMinMaxTracker.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaMinMaxTracker.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiRiffChunk.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiRiffChunk.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaFrameInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaFrameInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaMinMaxTrackerInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaMinMaxTrackerInline.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaCommon.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaCommon.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaFrame.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaFrame.h</Link>
+    </None>
+    <None Include="..\VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaCommonInline.h">
+      <Link>VidyoClient-iOSSDK\include\Lmi\Media\Common\LmiMediaCommonInline.h</Link>
+    </None>
+    <Compile Include="Call\CallCenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Common\VidyoController.cs">
@@ -497,6 +1668,10 @@
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
+    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libsrtp2.a">
+      <Kind>Static</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libssl.a">
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
@@ -504,19 +1679,10 @@
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libVidyoClient.a">
       <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
-      <Frameworks>AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit Photos</Frameworks>
+      <Frameworks>AudioToolbox AVFoundation CoreLocation CoreMedia SystemConfiguration UIKit</Frameworks>
     </NativeReference>
     <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\VPX.framework">
       <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\Banuba\BNBEffectPlayerC.xcframework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-      <LinkerFlags>-lc++</LinkerFlags>
-    </NativeReference>
-    <NativeReference Include="..\VidyoClient-iOSSDK\lib\ios\libsrtp.a">
-      <Kind>Static</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
   </ItemGroup>

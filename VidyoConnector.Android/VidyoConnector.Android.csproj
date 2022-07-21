@@ -397,6 +397,9 @@
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\RemoteMicrophone.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\RemoteMicrophone.cs</Link>
     </Compile>
+    <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\CameraPreset.cs">
+      <Link>VidyoClient-AndroidSDK\include\csharp\CameraPreset.cs</Link>
+    </Compile>
     <Compile Include="..\VidyoClient-AndroidSDK\include\csharp\CalendarCreateCode.cs">
       <Link>VidyoClient-AndroidSDK\include\csharp\CalendarCreateCode.cs</Link>
     </Compile>
@@ -536,27 +539,8 @@
     <Folder Include="Renderers\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidJavaLibrary Include="..\VidyoClient-AndroidSDK\lib\android\vidyoclient.jar">
-      <Link>VidyoClient-AndroidSDK\lib\android\vidyoclient.jar</Link>
-    </AndroidJavaLibrary>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidNativeLibrary Include="..\VidyoClient-AndroidSDK\lib\android\arm64-v8a\libVidyoClient.so">
-      <Link>VidyoClient-AndroidSDK\lib\android\arm64-v8a\libVidyoClient.so</Link>
-    </AndroidNativeLibrary>
-    <AndroidNativeLibrary Include="..\VidyoClient-AndroidSDK\lib\android\armeabi-v7a\libVidyoClient.so">
-      <Link>VidyoClient-AndroidSDK\lib\android\armeabi-v7a\libVidyoClient.so</Link>
-    </AndroidNativeLibrary>
-    <AndroidNativeLibrary Include="..\VidyoClient-AndroidSDK\lib\android\x86\libVidyoClient.so">
-      <Link>VidyoClient-AndroidSDK\lib\android\x86\libVidyoClient.so</Link>
-    </AndroidNativeLibrary>
-    <AndroidNativeLibrary Include="..\VidyoClient-AndroidSDK\lib\android\x86_64\libVidyoClient.so">
-      <Link>VidyoClient-AndroidSDK\lib\android\x86_64\libVidyoClient.so</Link>
-    </AndroidNativeLibrary>
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAarLibrary Include="..\VidyoClient-AndroidSDK\lib\android\banuba_effect_player_c_api-release.aar">
-      <Link>VidyoClient-AndroidSDK\lib\android\banuba_effect_player_c_api-release.aar</Link>
+    <AndroidAarLibrary Include="..\VidyoClient-AndroidSDK\lib\android\VidyoClient.aar">
+      <Link>VidyoClient-AndroidSDK\lib\android\VidyoClient.aar</Link>
       <AndroidSkipResourceProcessing></AndroidSkipResourceProcessing>
     </AndroidAarLibrary>
   </ItemGroup>

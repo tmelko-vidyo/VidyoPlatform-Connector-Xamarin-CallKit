@@ -1,7 +1,6 @@
 ﻿using System;
 using Android.App;
 using Android.Content.PM;
-using Android.Content;
 using Android.OS;
 using Android.Support.V4.Content;
 using Android;
@@ -33,7 +32,7 @@ namespace VidyoConnector.Android
 
             try
             {
-                LoadApplication(new App(VidyoController.GetInstance()));
+                LoadApplication(new App());
             }
             catch (Exception e)
             {
